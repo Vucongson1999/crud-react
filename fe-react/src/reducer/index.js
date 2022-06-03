@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
-import studentRuducer from "./studentReducer";
+import useRuducer from "./useReducer";
+import statusReducer from "./statusReducer";
 
 export default combineReducers({
-  student: studentRuducer,
+  student: useRuducer,
+  status: statusReducer
 });

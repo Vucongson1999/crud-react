@@ -1,6 +1,10 @@
 import { all } from "@redux-saga/core/effects";
-import studentSaga from "./studentSaga";
+import useSaga from "./useSaga";
+import statusSaga from "./statusSaga";
 function* rootSaga() {
-    yield all([...studentSaga]);
+    yield all([
+      ...useSaga,
+      ...statusSaga
+    ]);
   }
   export default rootSaga;

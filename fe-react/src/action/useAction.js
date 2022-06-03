@@ -1,9 +1,7 @@
 import { ADD_FAILURE, ADD_REQUEST, ADD_SUCCESS, 
     DELETE_FAILURE, DELETE_REQUEST, DELETE_SUCCESS, 
     GET_FAILURE, GET_REQUEST, GET_SUCCESS, 
-    PAGINATION_FAILURE, PAGINATION_REQUEST, PAGINATION_SUCCESS,
-     SEARCH_FAILURE, SEARCH_REQUEST, SEARCH_SUCCESS, 
-     UPDATE_FAILURE, UPDATE_REQUEST, UPDATE_SUCCESS } from '../constant'
+    UPDATE_FAILURE, UPDATE_REQUEST, UPDATE_SUCCESS } from '../constant'
 
 function getRequest() {
     return {
@@ -81,51 +79,9 @@ function updateFailure(payload) {
         payload
     }
 }
-
-function paginationRequest(payload) {
-    return {
-        type: PAGINATION_REQUEST,
-        payload
-    }
-}
-function paginationSuccess(payload) {
-    return {
-        type: PAGINATION_SUCCESS,
-        payload
-    }
-}
-function paginationFailure(payload) {
-    return {
-        type: PAGINATION_FAILURE,
-        payload
-    }
-}
-
-
-function searchRequest(payload) {
-    return {
-        type: SEARCH_REQUEST,
-        payload
-    }
-}
-function searchSuccess(payload) {
-    return {
-        type: SEARCH_SUCCESS,
-        payload
-    }
-}
-function searchFailure(payload) {
-    return {
-        type: SEARCH_FAILURE,
-        payload
-    }
-}
-
 export {
     getRequest, getSuccess, getFailure,
     addRequest, addSuccess, addFailure,
     deleteRequest, deleteSuccess, deleteFailure,
     updateRequest, updateSuccess, updateFailure,
-    paginationRequest, paginationSuccess, paginationFailure,
-    searchRequest, searchSuccess, searchFailure
 }

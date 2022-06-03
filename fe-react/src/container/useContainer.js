@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import * as action from "../action/studentAction";
-import StudentTable from "../component/studentTable";
-class StudentContainer extends Component {
+import * as action from "../action/useAction";
+import UseComponent from "../component/useComponent";
+class useContainer extends Component {
   componentDidMount() {
-    this.props.paginationStudent(1);
+    this.props.initLoad();
   }
   render() {
     return (
       <>
-        <StudentTable {...this.props} />
+        <UseComponent {...this.props} />
       </>
     );
   }
@@ -28,22 +28,14 @@ const mapDispatchToProps = (dispatch) => {
     },
     deleteStudent: (payload) => {
       dispatch(action.deleteRequest(payload));
-    },
-    searchStudent: (payload) => {
-      dispatch(action.searchRequest(payload));
-    },
-    paginationStudent: (num) => {
-      dispatch(action.paginationRequest(num));
-    },
+    }
   };
 };
 const mapStateToProps = (state) => {
   return {
     listStudents: state.student.listStudents,
-    activePage: state.student.activePage,
-    totalPage: state.student.totalPage,
-    textSearch: state.student.textSearch,
+    isFetChing: state.student.isFetChing,
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(StudentContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(useContainer);

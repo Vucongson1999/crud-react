@@ -1,4 +1,4 @@
-function getStudent() {
+function getStatus() {
     return new Promise((resolve, reject) => {
       const url = "http://localhost:3002/student";
       const config = { method: "GET" };
@@ -9,7 +9,7 @@ function getStudent() {
     });
   }
   
-  function addStudent(newStudent) {
+  function addStatus(newStudent) {
     return new Promise((resolve, reject) => {
       const url = "http://localhost:3002/student";
   
@@ -26,7 +26,7 @@ function getStudent() {
     });
   }
 
-  function deleteStudent(id) {
+  function deleteStatus(id) {
    
     return new Promise((resolve, reject) => {
         const url = `http://localhost:3002/student/${id}`
@@ -38,7 +38,7 @@ function getStudent() {
     });
 }
   
-function updateStudent(data) {
+function updateStatus(data) {
   return new Promise((resolve, reject) => {
       const url = `http://localhost:3002/student/${data.id}`
       fetch(url, {
@@ -50,5 +50,5 @@ function updateStudent(data) {
           .catch((error) => reject(error));
   });
 }
-export { getStudent, addStudent, deleteStudent, updateStudent };
+export { getStatus, addStatus, deleteStatus, updateStatus };
   
